@@ -34,7 +34,7 @@ defmodule Cocina do
   def iniciar do
     ordenes = lista_ordenes()
 
-    IO.puts("\n👨‍🍳 Preparando órdenes...")
+    IO.puts("\n Preparando órdenes...")
 
     # Medir tiempos usando el módulo Benchmark
     t1 = Benchmark.determinar_tiempo_ejecucion({Cocina, :preparar_secuencial, [ordenes]})
@@ -42,13 +42,13 @@ defmodule Cocina do
     t2 = Benchmark.determinar_tiempo_ejecucion({Cocina, :preparar_concurrente, [ordenes]})
 
     # Mostrar resultados
-    IO.puts("\n📊 Resultados de rendimiento:")
+    IO.puts("\n Resultados de rendimiento:")
     IO.puts(Benchmark.generar_mensaje(t1, t2))
 
     IO.puts("Tiempo secuencial: #{t1} µs")
     IO.puts("Tiempo concurrente: #{t2} µs")
 
-    IO.puts("\n⚡ Speedup calculado: x#{Float.round(Benchmark.calcular_speedup(t1, t2), 2)}")
+    IO.puts("\n Speedup calculado: x#{Float.round(Benchmark.calcular_speedup(t1, t2), 2)}")
 
     IO.puts("\nSimulación completada.\n")
   end
