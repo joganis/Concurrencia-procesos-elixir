@@ -2,7 +2,7 @@ defmodule Cocina do
   # Simula la preparación de una orden
   def preparar(%Orden{id: id, item: item, prep_ms: tiempo}) do
     :timer.sleep(tiempo)
-    IO.puts("✅ Orden #{id}: #{item} lista en #{tiempo} ms.")
+    IO.puts("Orden #{id}: #{item} lista en #{tiempo} ms.")
     {id, "#{item} (#{tiempo} ms)"}
   end
 
